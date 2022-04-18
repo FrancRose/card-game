@@ -1,12 +1,12 @@
-const readlineSync = require("readline-sync");
+// const readlineSync = require("readline-sync");
 
-// getInput() is a function that takes a `prompt` as an argument which
-// is a question (string) to ask the user.
-// the returning value of getInput() is a string of whatever the user has typed as the response
+// // getInput() is a function that takes a `prompt` as an argument which
+// // is a question (string) to ask the user.
+// // the returning value of getInput() is a string of whatever the user has typed as the response
 
-function getInput(prompt) {
-  return readlineSync.question(`${prompt}: `);
-}
+// function getInput(prompt) {
+//   return readlineSync.question(`${prompt}: `);
+// }
 
 // YOUR CODE STARTS HERE!!
 
@@ -22,6 +22,7 @@ function getInput(prompt) {
 // HINT: The result of step 6 is that each card will be an object inside of the deck array, for example [{suit: "diamonds", rank: "A", value: 0}, {suit: "diamonds", rank: "2", value: 1},...{etc}]. For example, if we wanted to organize the players and teams of the NBA with index numbers, we could write: nba.push({player: players[i], team: teams[n], index: i})
 // 7. After your loops, return deck, which should now return an array full of card objects if you were to run buildDeck().
 
+
 // STEP TWO - Shuffling your deck
 // 1. use a function declaration to create a function called shuffle that takes deck as an argument.
 // 2. Inside this function create a variable called "shuffledDeck" that takes deck as its value.
@@ -34,6 +35,51 @@ function getInput(prompt) {
 // 9. Still inside, assign "shuffledDeck[randomIndex]" a value of "temporaryValue".  (currentIndex //i--;)
 // 10. Review the code from steps 7,8, and 9, and leave a comment explaining what you believe those lines of code are doing as they swap assignments of values between them.
 // 11. Finally, close the while loop and return "shuffledDeck". You should now be able to run shuffle(buildDeck()) in node and see your shuffled deck of cards.
+
+function buildDeck() {
+  let suits = ['Diamonds' , 'Hearts', 'Spades', 'Clubs'];
+  let ranks = ['2', '3', '4', '5', '6', '7', '8' ,'9' , '10', 'Jack', 'King', 'Queen', 'Ace'];
+  let deck = [];
+
+  for (let suitsCount = 0; suitsCount < suits.length; suitsCount++) {
+    for (let ranksCount = 0; ranksCount < ranks.length; ranksCount++) {
+      // deck.push(ranks[ranksCount] + suits[suitsCount]);
+      
+    }
+  }
+}
+
+
+
+
+
+console.log(deck);
+function shuffle(deck) {
+  let shuffleDeck = deck;
+  let currentIndex = deck.length;
+  let tempValue; 
+  let randomIndex;
+
+  while (currentIndex != 0) {
+    randomIndex = Math.floor(Math.random() * 52) + 1;
+    tempValue = shuffleDeck
+  }
+}
+
+
+
+
+
+
+
+
+
+// =====================================================================================================================
+
+
+
+
+
 
 // STEP THREE - Greeting the player
 // 1. Declare a function called greet()
