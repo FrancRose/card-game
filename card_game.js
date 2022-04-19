@@ -1,12 +1,12 @@
-// const readlineSync = require("readline-sync");
+const readlineSync = require("readline-sync");
 
-// // getInput() is a function that takes a `prompt` as an argument which
-// // is a question (string) to ask the user.
-// // the returning value of getInput() is a string of whatever the user has typed as the response
+// getInput() is a function that takes a `prompt` as an argument which
+// is a question (string) to ask the user.
+// the returning value of getInput() is a string of whatever the user has typed as the response
 
-// function getInput(prompt) {
-//   return readlineSync.question(`${prompt}: `);
-// }
+function getInput(prompt) {
+  return readlineSync.question(`${prompt}: `);
+}
 
 // YOUR CODE STARTS HERE!!
 
@@ -41,19 +41,6 @@ console.log(buildDeck());
 buildDeck();
 // END CREATE DECK=====================================================================================================================================
 
-// STEP TWO - Shuffling your deck
-// 1. use a function declaration to create a function called shuffle that takes deck as an argument.
-// 2. Inside this function create a variable called "shuffledDeck" that takes deck as its value.
-// 3. Using "let" declare three new variables: currentIndex, whos value should equal the length of the deck array, and two more: temporaryValue and randomIndex, each of which should currently have no value assigned.
-// 4. Create a while loop whos condition is that "currentIndex" does not equal 0, so that we stop looping once we've gone through all 52 cards.
-// 5. Inside the while loop, use the javascript Math.methods to generate a random integer between 0 and "currentIndex"
-// 6. Inside the while loop, decrement current index by 1. (should be after step 9)
-// 7. Inside the while loop, assign "temporaryValue" with "shuffledDeck" (which is an array) to the [currentIndex].
-// 8. Still inside, assign "shuffledDeck[currentIndex]" a value of shuffledDeck to the [randomIndex]
-// 9. Still inside, assign "shuffledDeck[randomIndex]" a value of "temporaryValue".  (currentIndex //i--;)
-// 10. Review the code from steps 7,8, and 9, and leave a comment explaining what you believe those lines of code are doing as they swap assignments of values between them.
-// 11. Finally, close the while loop and return "shuffledDeck". You should now be able to run shuffle(buildDeck()) in node and see your shuffled deck of cards.
-
 function shuffle(deck) {
   let shuffleDeck = deck;
   let currentIndex = 52;
@@ -71,6 +58,20 @@ function shuffle(deck) {
 }
 
 console.log(shuffle(buildDeck()));
+
+// STEP TWO - Shuffling your deck
+// 1. use a function declaration to create a function called shuffle that takes deck as an argument.
+// 2. Inside this function create a variable called "shuffledDeck" that takes deck as its value.
+// 3. Using "let" declare three new variables: currentIndex, whos value should equal the length of the deck array, and two more: temporaryValue and randomIndex, each of which should currently have no value assigned.
+// 4. Create a while loop whos condition is that "currentIndex" does not equal 0, so that we stop looping once we've gone through all 52 cards.
+// 5. Inside the while loop, use the javascript Math.methods to generate a random integer between 0 and "currentIndex"
+// 6. Inside the while loop, decrement current index by 1. (should be after step 9)
+// 7. Inside the while loop, assign "temporaryValue" with "shuffledDeck" (which is an array) to the [currentIndex].
+// 8. Still inside, assign "shuffledDeck[currentIndex]" a value of shuffledDeck to the [randomIndex]
+// 9. Still inside, assign "shuffledDeck[randomIndex]" a value of "temporaryValue".  (currentIndex //i--;)
+// 10. Review the code from steps 7,8, and 9, and leave a comment explaining what you believe those lines of code are doing as they swap assignments of values between them.
+// 11. Finally, close the while loop and return "shuffledDeck". You should now be able to run shuffle(buildDeck()) in node and see your shuffled deck of cards.
+
 
 
 // STEP THREE - Greeting the player
