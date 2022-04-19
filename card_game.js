@@ -22,6 +22,24 @@
 // HINT: The result of step 6 is that each card will be an object inside of the deck array, for example [{suit: "diamonds", rank: "A", value: 0}, {suit: "diamonds", rank: "2", value: 1},...{etc}]. For example, if we wanted to organize the players and teams of the NBA with index numbers, we could write: nba.push({player: players[i], team: teams[n], index: i})
 // 7. After your loops, return deck, which should now return an array full of card objects if you were to run buildDeck().
 
+// CREATE DECK=======================================================================================================================================
+function buildDeck() {
+  let suits = ['Diamonds', 'Hearts', 'Spades', 'Clubs'];
+  let ranks = ['2', '3', '4', '5', '6', '7', '8' ,'9' , '10', 'Jack', 'King', 'Queen', 'Ace'];
+  let deck = [];
+
+  for (let ranksCount = 0; ranksCount < ranks.length; ranksCount++) {
+    for (let suitsCount = 0; suitsCount < suits.length; suitsCount++) {
+      deck.push({rank: ranks[ranksCount] , suit: suits[suitsCount], value: ranks[ranksCount] + ' of ' + suits[suitsCount]})
+      // deck.push(ranks[ranksCount] + suits[suitsCount]);
+    }
+  }
+  console.log(deck.length);
+    return deck;
+}
+console.log(buildDeck());
+buildDeck();
+// END CREATE DECK=====================================================================================================================================
 
 // STEP TWO - Shuffling your deck
 // 1. use a function declaration to create a function called shuffle that takes deck as an argument.
@@ -36,49 +54,23 @@
 // 10. Review the code from steps 7,8, and 9, and leave a comment explaining what you believe those lines of code are doing as they swap assignments of values between them.
 // 11. Finally, close the while loop and return "shuffledDeck". You should now be able to run shuffle(buildDeck()) in node and see your shuffled deck of cards.
 
-function buildDeck() {
-  let suits = ['Diamonds' , 'Hearts', 'Spades', 'Clubs'];
-  let ranks = ['2', '3', '4', '5', '6', '7', '8' ,'9' , '10', 'Jack', 'King', 'Queen', 'Ace'];
-  let deck = [];
-
-  for (let suitsCount = 0; suitsCount < suits.length; suitsCount++) {
-    for (let ranksCount = 0; ranksCount < ranks.length; ranksCount++) {
-      // deck.push(ranks[ranksCount] + suits[suitsCount]);
-      
-    }
-  }
-}
-
-
-
-
-
-console.log(deck);
 function shuffle(deck) {
   let shuffleDeck = deck;
-  let currentIndex = deck.length;
-  let tempValue; 
+  let currentIndex = 52;
+  let temporaryValue;
   let randomIndex;
 
-  while (currentIndex != 0) {
-    randomIndex = Math.floor(Math.random() * 52) + 1;
-    tempValue = shuffleDeck
+  while (currentIndex !== 0) {
+    randomIndex = Math.floor((Math.random() * currentIndex) + 1);
+    currentIndex--;
+    temporaryValue = shuffleDeck[currentIndex];
+    shuffleDeck[currentIndex] = shuffleDeck[randomIndex];
+    shuffleDeck[randomIndex] = temporaryValue;
   }
+  return shuffleDeck;
 }
 
-
-
-
-
-
-
-
-
-// =====================================================================================================================
-
-
-
-
+console.log(shuffle(buildDeck()));
 
 
 // STEP THREE - Greeting the player
@@ -87,6 +79,8 @@ function shuffle(deck) {
 // 3. Console.log name
 // 4. return name
 // 5. Done.
+
+
 
 // STEP FOUR - comparing cards
 // 1. declare a function called compare that takes two cards as arguments
